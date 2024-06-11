@@ -1,0 +1,57 @@
+<div class="header">
+    <h2>CRUD Operation with <span>PHP + MySQL</span></h2>
+    <div class="nav">
+        <button (click)="showPop()">Add Student</button>
+        <button (click)="show1=!show1">All Details</button>
+    </div>
+</div>
+<div class="table-content" *ngIf="show1">
+    <table>
+        <thead>
+            <tr>
+                <th>RollNo</th>
+                <th>FullName</th>
+                <th>Email Address</th>
+                <th>Date of Birth</th>
+                <th>Mobile No</th>
+                <th>Gender</th>
+                <th>Fees</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of studentArr">
+                <td>{{student.RollNo}}</td>
+                <td>{{student.FullName}}</td>
+                <td>{{student.EmailId}}</td>
+                <td>{{student.DOB |date:'longDate'}}</td>
+                <td>{{student.MobileNo}}</td>
+                <td>{{student.Gender}}</td>
+                <td>{{student.Fees | currency:'INR'}}</td>
+                <td class="action">
+                    <button (click)="onEdit(student.RollNo)">Edit</button>
+                    <button (click)="onDelete(student.RollNo)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container" *ngIf="show">
+    <div class="title">
+        <h2>{{operationTitle}}</h2>
+    </div>
+    <form [formGroup]="fb" (ngSubmit)="onSubmit()">
+        <input type="number" placeholder="Roll No" formControlName="rollNo"  [readOnly]="isDisabled">
+        <input type="text" placeholder="Fullname" formControlName="fullName">
+        <input type="email" placeholder="Email Address" formControlName="emailId">
+        <input type="date" formControlName="dob">
+        <input type="text" placeholder="Mobile No" formControlName="mobile">
+        <select formControlName="gender">
+            <option value="" selected>Gender</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+        </select>
+        <input type="number" placeholder="Fees" formControlName="fees">
+        <input type="submit" value={{operationTitle}}>
+    </form>
+</div>

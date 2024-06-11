@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="login">
+        <div class="header">
+            <i class="fa-solid fa-circle-user"></i>
+            <h1>Login Here !!</h1>
+            <p>Provide your credentials to login</p>
+        </div>
+        <form [formGroup]="fb" (ngSubmit)="onLogin()">
+            <input type="email" placeholder="username" formControlName="username">
+            <input type="password" placeholder="password" formControlName="password">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+.container{
+    width: 100%;
+    height: 695px;
+    background:url('https://wallpaperset.com/w/full/d/0/b/407296.jpg')no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.container .login{
+    width: 350px;
+    height: 430px;
+    background: rgba(0, 0, 0, 0.2);
+    margin-right: 70px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.login .header{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.login .header i{
+    font-size: 80px;
+    margin-top: 15px;
+    color: lightslategray;
+}
+.login .header h1{
+    color: lightslategray;
+}
+.login .header p{
+    color: white;
+}
+.login form{
+    padding: 20px 10px;
+    height: calc(100% - 150px);
+}
+.login form input{
+    width: 85%;
+    padding: 8px;
+    margin-bottom: 25px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
+    margin-left: 20px;
+    color: white;
+}
+.login form input::placeholder{
+    color: whitesmoke;
+    font-style: italic;
+}
+.login form input[type="submit"]{
+    background: lightslategray;
+    color: white;
+    cursor: pointer;
+    transition: all ease-in 0.4s;
+    border-bottom: none;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 50%;
+}
+.login form input[type="submit"]:hover{
+    background: blue;
+}
